@@ -375,7 +375,23 @@ int main( )
 		}
 		case 11: // syscall allocate
 		{
+			printf( "--------------------------------------------------------------------------------------\n" );
+			printf( "calling NtAllocateVirtualMemory...\n" );
 
+			void* address{ };
+			SIZE_T region_size{ 0x1000 };
+			if ( NT_ERROR( NtAllocateVirtualMemory( GetCurrentProcess( ), &address, 0, &region_size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE ) ) )
+			{
+				printf( "could not allocate virtual memory\n" );
+				break;
+			}
+
+			*reinterpret_cast< int* >( address ) = rand( );
+			printf( "allocated memory at 0x%p\n", &address );
+			printf( "value at address: %d\n", *reinterpret_cast< int* >( address ) );
+			printf( "freeing memory...\n" );
+
+			NtFreeVirtualMemory( address, &address, &region_size, MEM_RELEASE );
 
 			break;
 		}

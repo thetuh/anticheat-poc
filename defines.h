@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef NT_ERROR
+#define NT_ERROR(Status) ((((ULONG)(Status)) >> 30) == 3)
+#endif
+
 #define STATUS_SUCCESS                   ((NTSTATUS)0x00000000L)    // ntsubauth
 #define STATUS_ACCESS_DENIED             ((NTSTATUS)0xC0000022L)
 #define STATUS_NOT_SUPPORTED             ((NTSTATUS)0xC00000BBL)
