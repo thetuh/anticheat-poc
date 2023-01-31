@@ -7,3 +7,4 @@ In pursuit of a deeper understanding of low-level programming and reverse engine
 # Planned
 * Query opened handles to our process
 # Resources
+https://github.com/TsudaKageyu/minhook
