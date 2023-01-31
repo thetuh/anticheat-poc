@@ -5,4 +5,5 @@ In pursuit of a deeper understanding of low-level programming and reverse engine
 * Inline hook return address integrity checks on various Windows API / Native API function exports
 * Kernel-level return address integrity checks on all syscalls
 # Planned
+* Query opened handles to our process
 # Resources
