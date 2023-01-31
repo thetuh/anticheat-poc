@@ -106,6 +106,8 @@ void DebugOut( const wchar_t* fmt, ... )
 	OutputDebugString( dbg_out );
 }
 
+// could be massively improved
+
 bool validate_call( uintptr_t address )
 {
 	HMODULE hMods[ 1024 ];

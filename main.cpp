@@ -385,7 +385,7 @@ int main( )
 				printf( "could not allocate virtual memory\n" );
 				break;
 			}
-
+			
 			*reinterpret_cast< int* >( address ) = rand( );
 			printf( "allocated memory at 0x%p\n", &address );
 			printf( "value at address: %d\n", *reinterpret_cast< int* >( address ) );
